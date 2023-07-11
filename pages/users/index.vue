@@ -1,12 +1,30 @@
 <template>
     <h1>This is the User page</h1>
+    <div>
+        <input type="text" v-model="userId" >
+        <button @click="onLoadUser">Load User</button>
+    </div>
 </template>
 
 
-<script setup lang="ts">
+<script  >
+export default {
+    data() {
+        return {
+            userId: ''
+        }
+    },
+    methods: {
+        onLoadUser() {
+     this.$router.push('/users/' + this.userId)
+        }
+    }
+}
+
 
 </script>
 
 <style lang="scss" scope>
 
 </style>
+
